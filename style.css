@@ -19,7 +19,8 @@ header {
 }
 
 header {
-  background-image: url("images/POSTER PRINTED VAN GOGH @ UPSI.jpg ");
+  height: 100vh;
+  background-image: url("images/poster-printed-van-gogh-upsi.jpg");
   background-size: cover;
   background-position: center;
 }
