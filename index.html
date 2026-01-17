@@ -4,15 +4,29 @@
   <meta charset="UTF-8">
   <title>VanGogh@UPSI</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href= "file:///D:/VanGoghWebsite/VanGoghUpsiwebsite/about.html">About</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#file:///D:/VanGoghWebsite/VanGoghUpsiwebsite/index.html#home">Home</a></li>
+</ul>
 
   <!-- Header -->
   <header>
     <h1>Immersive Exhibition: Van Gogh</h1>
     <p>@ UPSI 2026</p>
-    <img src="./images/poster.jpg" alt="posterr">
+
     
+  
   </header>
 
   <!-- About Section -->
@@ -23,21 +37,89 @@
     </p>
   </section>
 
+  
   <!-- Gallery Section -->
-  <section class="gallery">
-    <h2>Gallery</h2>
-    <div class="images">
-      <img src="https://via.placeholder.com/300x200" alt="Artwork 1">
-      <img src="https://via.placeholder.com/300x200" alt="Artwork 2">
-      <img src="https://via.placeholder.com/300x200" alt="Artwork 3">
-    </div>
-  </section>
+   <h2>Gallery</h2>
+<div class="gallery">
+  <img src="marketing.png"
+     alt="Advertising"
+     class="gallery-item"
+     onclick="openModal('modal1', 'Advertising Student')">
+  <img src="logobatch.jpeg"
+     alt="Digital Games"
+     class="gallery-item"
+     onclick="openModal('modal2', 'Digital Games Student')">
+  <img src="animation.jpg"
+     alt="Animation"
+     class="gallery-item"
+     onclick="openModal('modal3', 'Animation Student')">
+</div>
 
+<div id="modal1" class="modal">
+  <span class="close" onclick="closeModal('modal1')">&times;</span>
+
+  <a href="adstudent.html">
+    <img src="marketing.png" alt="Advertising" class="modal-content">
+  </a>
+
+  <div class="desc">Click image to view AD Student page</div>
+</div>
+
+<div id="modal2" class="modal">
+   <span class="close" onclick="closeModal('modal2')">&times;</span>
+
+  <a href="gamestudent.html">
+    <img src="logobatch.jpeg" alt="Digital Games" class="modal-content">
+  </a>
+
+  <div class="desc">Click image to view AD Student page</div>
+</div>
+
+<div id="modal3" class="modal">
+    <span class="close" onclick="closeModal('modal3')">&times;</span>
+
+  <a href="animstudent.html">
+    <img src="animation.jpg" alt="Animation" class="modal-content">
+  </a>
+
+  <div class="desc">Click image to view AD Student page</div>
+</div>
+
+
+<script>
+function openModal(modalId, caption, link = null) {
+  let modal = document.getElementById(modalId);
+  modal.style.display = "flex";
+  modal.classList.add("show");
+
+  let message = modal.querySelector(".caption");
+  message.innerText = caption;
+
+  if (link) {
+    modal.onclick = function () {
+      window.open(link, "_blank");
+    };
+  }
+}
+
+function closeModal(modalId) {
+  let modal = document.getElementById(modalId);
+  modal.classList.remove("show");
+  setTimeout(function () {
+    modal.style.display = "none";
+    modal.querySelector(".caption").innerText = "";
+    modal.onclick = null;
+  }, 300);
+}
+</script>
+
+
+</div>
   <!-- Info Section -->
   <section class="info">
     <h2>Exhibition Info</h2>
     <p><strong>Date:</strong> 2026</p>
-    <p><strong>Location:</strong> UPSI</p>
+    <p><strong>Location:</strong> UPSI Digital Gallery</p>
     <p><strong>Type:</strong> Digital & Immersive Art</p>
   </section>
 
@@ -47,4 +129,7 @@
   </footer>
 
 </body>
+
+
+
 </html>
